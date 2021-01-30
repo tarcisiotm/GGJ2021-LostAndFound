@@ -329,8 +329,10 @@ MonoBehaviour:
   _postScrollingDelay: 3
   _scrollingSpeed: 15
   _creditsData:
-  - {fileID: 11400000, guid: f9db9ef75f0db4bcdb4f95f321ae3b5b, type: 2}
   - {fileID: 11400000, guid: 691c33fa40cc3406397a52e1de567781, type: 2}
+  - {fileID: 11400000, guid: bb42ffc0c4a504c0695257ac3aff0e83, type: 2}
+  - {fileID: 11400000, guid: f9db9ef75f0db4bcdb4f95f321ae3b5b, type: 2}
+  - {fileID: 11400000, guid: d4575f8a65fd5494397600abb57c95b7, type: 2}
   _pressAgainToQuitText: {fileID: 1545824071}
   _currentTime: 0
   _creditsState: 0

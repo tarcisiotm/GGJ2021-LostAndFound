@@ -10,10 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8cc5fc88205884e51b85d9df7d813afe, type: 3}
-  m_Name: Art
+  m_Name: Programming
   m_EditorClassIdentifier: 
-  _title: Art
+  _title: Programming
   _creditsEntries:
-  - Name: "Andr\xE9 Pelaes"
+  - Name: "Tarc\xEDsio Costa"
     Links:
-    - https://andrepelaesdavid.art/
+    - http://tarcisiocosta.com
+  - Name: Juninho Ribeiro
+    Links: []
