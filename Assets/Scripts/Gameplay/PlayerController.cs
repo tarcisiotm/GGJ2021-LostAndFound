@@ -56,14 +56,15 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
     }
 
     #region Interface Implementation
-    private void IGetHit.HandleDamage(IHit hitObject)
+    void IGetHit.HandleDamage(IHit hitObject)
     {
         // healthPoints - hitObject.GetDamageAmmount();
     }
 
-    private void IHit.GetDamageAmmount()
+    int IHit.GetDamageAmmount()
     {
         // return current damage ammount
+        return 0;
     }
     #endregion Interface Implementation
 }
