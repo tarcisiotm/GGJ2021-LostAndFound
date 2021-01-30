@@ -18,9 +18,7 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
     private Rigidbody _rigidBody;
 
     private PlayerControls _controls;
-
     
-
     private void Awake()
     {
         _rigidBody = GetComponentInChildren<Rigidbody>();
@@ -31,8 +29,6 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
         _controls.Gameplay.Move.canceled += context => _inputDirection = Vector3.zero;
 
         _controls.Gameplay.Shoot.performed += context => Shoot();
-        
-        
     }
 
     private void OnEnable()
@@ -83,7 +79,6 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
         Bullet bullet = g_bullet.GetComponent<Bullet>();
         bullet.UpdateDirection(muzzle.right);
         bullet.UpdateSpeed(bulletSpeed);
-
     }
 
     #region Interface Implementation
