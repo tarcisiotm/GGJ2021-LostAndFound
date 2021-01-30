@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IHit, IGetHit
 {
     [Header("Settings")]
     [SerializeField] float _speed = 1;
@@ -54,4 +54,16 @@ public class PlayerController : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), _angleSpeed * Time.deltaTime);
     }
+
+    #region Interface Implementation
+    private void IGetHit.HandleDamage(IHit hitObject)
+    {
+        // healthPoints - hitObject.GetDamageAmmount();
+    }
+
+    private void IHit.GetDamageAmmount()
+    {
+        // return current damage ammount
+    }
+    #endregion Interface Implementation
 }
