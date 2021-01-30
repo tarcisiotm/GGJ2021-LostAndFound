@@ -62,14 +62,16 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
 
     private void HandleRotation()
     {
+        /*
         Vector3 mousePos = _controls.Gameplay.Rotate.ReadValue<Vector2>();
         mousePos.z = 10;
 
         var objectPos = Camera.main.WorldToScreenPoint(transform.position);
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
+        */
 
-        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(_inputDirection.y, _inputDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), _angleSpeed * Time.deltaTime);
     }
 
