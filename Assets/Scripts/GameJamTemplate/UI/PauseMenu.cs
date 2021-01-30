@@ -1,6 +1,7 @@
 ﻿using TG.Core;
 using UnityEngine;
 
+
 /// <summary>
 /// A Pause menu handler
 /// </summary>
@@ -14,12 +15,29 @@ public class PauseMenu : MonoBehaviour {
     public delegate void PauseEvent(bool pauseStatus);
     public static event PauseEvent OnPauseEvent;
 
+    private PlayerControls _controls;
+
     void Start() { }
+
+    private void Awake()
+    {
+        _controls = new PlayerControls();
+    }
+
+    private void OnEnable()
+    {
+        _controls.Gameplay.Enable();
+    }
+
+    private void OnDisable()
+    {
+        _controls.Gameplay.Disable();
+    }
 
     void Update() {
         if (!canUpdate) { return; }
 
-        if (Input.GetKeyDown(KeyCode.Escape)) {
+        if (_controls.Gameplay.Pause.triggered) {
             if (isPaused) { UnpauseGame(); } else { PauseGame(); }
         }
     }
