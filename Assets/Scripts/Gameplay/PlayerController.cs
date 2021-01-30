@@ -8,12 +8,17 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
     [SerializeField] float _speed = 1;
     [SerializeField] float _angleSpeed = 2;
 
+    [Header("Shoot")]
+    [SerializeField] private GameObject bulletPrefab;
+    [SerializeField] private Transform muzzle;
+    [SerializeField] private float bulletSpeed;
+
     private Vector3 _inputDirection;
     
     private Rigidbody _rigidBody;
 
     private PlayerControls _controls;
-
+    
     private void Awake()
     {
         _rigidBody = GetComponentInChildren<Rigidbody>();
@@ -22,7 +27,8 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
 
         _controls.Gameplay.Move.performed += context => _inputDirection = context.ReadValue<Vector2>();
         _controls.Gameplay.Move.canceled += context => _inputDirection = Vector3.zero;
-        
+
+        _controls.Gameplay.Shoot.performed += context => Shoot();
     }
 
     private void OnEnable()
@@ -44,13 +50,7 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
 
     private void HandleInput()
     {
-        //var hor = Input.GetAxisRaw("Horizontal");
-        //var ver = Input.GetAxisRaw("Vertical");
-
-        //_inputDirection = Vector3.zero;
-        //_inputDirection.x = Input.GetAxis("Horizontal");
-        //_inputDirection.y = Input.GetAxis("Vertical");
-        _inputDirection = Vector3.ClampMagnitude(_inputDirection, 1f); // prevent diagonals from being faster
+         _inputDirection = Vector3.ClampMagnitude(_inputDirection, 1f); // prevent diagonals from being faster
     }
 
     private void HandleMovement()
@@ -73,6 +73,14 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
 
         float angle = Mathf.Atan2(_inputDirection.y, _inputDirection.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), _angleSpeed * Time.deltaTime);
+    }
+
+    private void Shoot()
+    {
+        GameObject g_bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        Bullet bullet = g_bullet.GetComponent<Bullet>();
+        bullet.UpdateDirection(muzzle.right);
+        bullet.UpdateSpeed(bulletSpeed);
     }
 
     #region Interface Implementation
