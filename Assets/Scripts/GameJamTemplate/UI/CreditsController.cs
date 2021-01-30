@@ -50,6 +50,14 @@ public class CreditsController : MonoBehaviour
     private Vector3 _targetPos;
 
     private bool _hasInit;
+    
+    private PlayerControls _controls;
+
+    private void Awake()
+    {
+        _controls = new PlayerControls();
+
+    }
 
     private void Reset()
     {
@@ -63,6 +71,8 @@ public class CreditsController : MonoBehaviour
 
     private void OnEnable()
     {
+        _controls.UI.Enable();
+
         _pressAgainToQuitText.SetActive(false);
 
         if (!_hasInit)
@@ -87,6 +97,11 @@ public class CreditsController : MonoBehaviour
         else Reset();
     }
 
+    private void OnDisable()
+    {
+        _controls.UI.Disable();
+    }
+
     private IEnumerator Start()
     {
         yield return null;
@@ -100,7 +115,7 @@ public class CreditsController : MonoBehaviour
     {
         if (!_hasInit) return;
 
-        if (Input.anyKeyDown && _creditsState != CreditsState.FadingOut)
+        if (_controls.UI.Submit.triggered && _creditsState != CreditsState.FadingOut)
         {
             if (_keysPressed < 1)
             {
