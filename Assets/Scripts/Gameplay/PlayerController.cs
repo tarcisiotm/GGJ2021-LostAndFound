@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TG.Core;
 
 public class PlayerController : MonoBehaviour, IHit, IGetHit
 {
@@ -9,9 +10,9 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
     [SerializeField] float _angleSpeed = 2;
 
     [Header("Shoot")]
-    [SerializeField] private GameObject bulletPrefab;
-    [SerializeField] private Transform muzzle;
-    [SerializeField] private float bulletSpeed;
+    [SerializeField] private GameObject _bulletPrefab;
+    [SerializeField] private Transform _muzzle;
+    [SerializeField] private float _bulletSpeed;
 
     private Vector3 _inputDirection;
     
@@ -77,10 +78,14 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
 
     private void Shoot()
     {
-        GameObject g_bullet = Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
-        Bullet bullet = g_bullet.GetComponent<Bullet>();
-        bullet.UpdateDirection(muzzle.right);
-        bullet.UpdateSpeed(bulletSpeed);
+        var bullet = PoolingManager.I.GetPooledObject<Bullet>(_bulletPrefab);//Instantiate(bulletPrefab, muzzle.position, muzzle.rotation);
+        bullet.transform.position = _muzzle.position;
+        bullet.transform.rotation = _muzzle.rotation;
+
+        bullet.UpdateDirection(_muzzle.right);
+        bullet.UpdateSpeed(_speed + _bulletSpeed);
+
+        bullet.gameObject.SetActive(true);
     }
 
     #region Interface Implementation
