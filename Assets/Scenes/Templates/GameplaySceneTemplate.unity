@@ -5182,6 +5182,28 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 640308213, guid: 03dd9597e62fe4a16b7965e2746f2922, type: 3}
+      propertyPath: _player
+      value: 
+      objectReference: {fileID: 1022375973}
+    - target: {fileID: 640308213, guid: 03dd9597e62fe4a16b7965e2746f2922, type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 812362563}
+    - target: {fileID: 640308213, guid: 03dd9597e62fe4a16b7965e2746f2922, type: 3}
+      propertyPath: _sonarSize
+      value: 110
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165004381651666360, guid: 03dd9597e62fe4a16b7965e2746f2922,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 4165004381651666360, guid: 03dd9597e62fe4a16b7965e2746f2922,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 256
+      objectReference: {fileID: 0}
     - target: {fileID: 5988250275798395459, guid: 03dd9597e62fe4a16b7965e2746f2922,
         type: 3}
       propertyPath: m_Name
