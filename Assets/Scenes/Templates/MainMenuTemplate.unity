@@ -867,7 +867,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: 79e0fa5704d6b443ca1e9a4594108616, type: 3}
+      objectReference: {fileID: 8300000, guid: 89ccf308e7d9e432e8ce993193dfd89c, type: 3}
     - target: {fileID: 7135555559467506893, guid: 84b6229af678c4c13aa2a99ef46ef28b,
         type: 3}
       propertyPath: m_Name
@@ -927,6 +927,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7135555559798052612, guid: 84b6229af678c4c13aa2a99ef46ef28b,
+        type: 3}
+      propertyPath: minLoadTime
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8200600332461295159, guid: 84b6229af678c4c13aa2a99ef46ef28b,
+        type: 3}
+      propertyPath: fadeOutTime
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 84b6229af678c4c13aa2a99ef46ef28b, type: 3}
@@ -1584,12 +1594,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9117857267283470141, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857267283470141, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1073400459}
     - target: {fileID: 9117857267283470141, guid: c61097c6196494dbab5cf45768c5e36c,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1587872687}
+    - target: {fileID: 9117857267283470141, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9117857267283470141, guid: c61097c6196494dbab5cf45768c5e36c,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9117857267283470141, guid: c61097c6196494dbab5cf45768c5e36c,
