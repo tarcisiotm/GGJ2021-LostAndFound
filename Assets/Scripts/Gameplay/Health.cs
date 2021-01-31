@@ -2,12 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Health : MonoBehaviour
+public class Health : MonoBehaviour, IGetHit
 {
     [SerializeField] uint _maxHealthPoints;
     [SerializeField] uint _currentHealth;
 
-    // Start is called before the first frame update
+    public delegate void OnDeathCallback();
+    public event OnDeathCallback OnDeath;
+
+    private bool _isDead;
+
+    public bool IsDead => _isDead;
+
     void Start()
     {
         _currentHealth = _maxHealthPoints;
@@ -41,14 +47,20 @@ public class Health : MonoBehaviour
 
     public void LoseHealth(uint amount)
     {
-        if (amount > _currentHealth)
+        _currentHealth -= amount;
+
+        if (!_isDead && _currentHealth <= 0) // what is dead may never die (again)
+        {
+            _isDead = true;
             _currentHealth = 0;
-        else
-            _currentHealth -= amount;
+            OnDeath?.Invoke();
+        }
     }
 
-    public bool IsDead()
+    #region Interface Implementation
+    void IGetHit.HandleDamage(IHit hitObject)
     {
-        return _currentHealth == 0;
+        LoseHealth(hitObject.GetDamageAmount());
     }
+    #endregion Interface Implementation
 }

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IHit, IPoolingItem
 {
+    [SerializeField] private GameObject _onImpactPrefab;
+
     private uint _damage = 1;
     private float _speed;
     private Vector3 _direction;
@@ -40,8 +42,20 @@ public class Bullet : MonoBehaviour, IHit, IPoolingItem
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Player"))
-            gameObject.SetActive(false);
+        var target = collision.gameObject.GetComponentInParent<IGetHit>();
+
+        if (_onImpactPrefab != null)
+        {
+            var obj = Instantiate(_onImpactPrefab);
+            obj.transform.position = collision.contacts[0].point;
+            obj.transform.rotation = Quaternion.LookRotation(collision.contacts[0].normal);
+        }
+
+        if (target != null)
+        {
+            target.HandleDamage(this);
+        }
+        gameObject.SetActive(false);
     }
     
     void IPoolingItem.Reset()
