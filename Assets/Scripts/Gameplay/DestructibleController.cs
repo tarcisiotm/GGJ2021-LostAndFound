@@ -9,6 +9,10 @@ public class DestructibleController : MonoBehaviour
     [Header("Optional")]
     [SerializeField] private GameObject _onDeathPrefab;
 
+    [Header("SFX")]
+    [SerializeField] private AudioClip _onExplosionAudio;
+    [SerializeField] private float _onExplosionAudioVolume;
+
     [SerializeField] private GameObject _pickupPrefab;
     [Tooltip("These will be clamped between 0 and 1 (100%)")]
     [SerializeField] [Range(0,1)] private float _minMaxSpawnProbability = 1f;
@@ -47,6 +51,8 @@ public class DestructibleController : MonoBehaviour
             obj.transform.position = transform.position;
             obj.SetActive(true);
         }
+
+        if (_onExplosionAudio != null) AudioManager.I.CreateOneShot(_onExplosionAudio, transform.position, _onExplosionAudioVolume);
 
         gameObject.SetActive(false);
     }

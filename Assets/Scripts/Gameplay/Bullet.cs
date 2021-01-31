@@ -9,11 +9,9 @@ public class Bullet : MonoBehaviour, IHit, IPoolingItem
     [SerializeField] private GameObject _onImpactPrefab;
     [SerializeField] private float _onFireAudioVolume = .3f;
     [SerializeField] private float _onImpactAudioVolume = .3f;
-    [SerializeField] private float _onImpactAudioExplosionVolume = .3f;
     [SerializeField] private AudioClip _onFireAudio;
     [SerializeField] private AudioClip _onImpactAudio;
-    [SerializeField] private AudioClip _onImpactExplosionAudio;
-
+    
     private uint _damage = 1;
     private float _speed;
     private Vector3 _direction;
@@ -63,9 +61,8 @@ public class Bullet : MonoBehaviour, IHit, IPoolingItem
             target.HandleDamage(this);
         }
 
-        if (_onImpactAudio != null) AudioManager.I.CreateOneShot(_onImpactAudio, transform.position, _onImpactAudioVolume);
-        if (_onImpactExplosionAudio != null) AudioManager.I.CreateOneShot(_onImpactExplosionAudio, transform.position.normalized, _onImpactAudioExplosionVolume);
-
+        if (_onImpactAudio != null) AudioManager.I.CreateOneShot(_onImpactAudio, collision.contacts[0].point, _onImpactAudioVolume);
+                
         gameObject.SetActive(false);
     }
     

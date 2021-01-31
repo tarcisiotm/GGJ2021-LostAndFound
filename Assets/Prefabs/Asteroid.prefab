@@ -126,6 +126,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onDeathPrefab: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
     type: 3}
+  _onExplosionAudio: {fileID: 8300000, guid: a3f97e3d9623fa84ab404144e02a4108, type: 3}
+  _onExplosionAudioVolume: 0.3
   _pickupPrefab: {fileID: 0}
   _minMaxSpawnProbability: 1
 --- !u!114 &5239654133780391529
