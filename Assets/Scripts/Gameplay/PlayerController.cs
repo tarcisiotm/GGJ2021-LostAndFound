@@ -26,8 +26,6 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     private float _currentSpeed;
 
-    private float _lastAngle;
-
     private AudioSource _audioSource;
 
     private Vector3 _inputDirection;
@@ -104,8 +102,6 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     private void Update()
     {
-        HandleRotation();
-
 #if UNITY_EDITOR
         if (Keyboard.current.spaceKey.wasPressedThisFrame) _health.LoseHealth(1);
         if (_health.IsDead) gameObject.SetActive(false);
@@ -114,6 +110,7 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     private void FixedUpdate()
     {
+        HandleRotation();
         HandleMovement();
     }
 
