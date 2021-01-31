@@ -9,11 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 366984861761532248}
+  - component: {fileID: 7932338171184985338}
   - component: {fileID: 736208115044141128}
   - component: {fileID: 8254396890784074245}
   - component: {fileID: 4038873642389097580}
   - component: {fileID: 6181370065106013644}
-  - component: {fileID: 7932338171184985338}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -35,6 +35,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7932338171184985338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5411709538847830972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5382cfe42b23e1840827ed1bcfe4119d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _onImpactPrefab: {fileID: 6851637064773068404, guid: 81e16e4dcb77b4c41ba2b012ccc6488e,
+    type: 3}
+  _onFireAudioVolume: 0.05
+  _onImpactAudioVolume: 0.2
+  _onImpactAudioExplosionVolume: 0.2
+  _onFireAudio: {fileID: 8300000, guid: 72e0508e1a6f74c5298224f4c497cca2, type: 3}
+  _onImpactAudio: {fileID: 8300000, guid: 7817faa79149b45df9ee79f99012b43c, type: 3}
+  _onImpactExplosionAudio: {fileID: 0}
 --- !u!33 &736208115044141128
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -111,17 +131,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!114 &7932338171184985338
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5411709538847830972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5382cfe42b23e1840827ed1bcfe4119d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _onImpactPrefab: {fileID: 6851637064773068404, guid: 81e16e4dcb77b4c41ba2b012ccc6488e,
-    type: 3}

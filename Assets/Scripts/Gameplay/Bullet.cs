@@ -7,6 +7,12 @@ using UnityEngine;
 public class Bullet : MonoBehaviour, IHit, IPoolingItem
 {
     [SerializeField] private GameObject _onImpactPrefab;
+    [SerializeField] private float _onFireAudioVolume = .3f;
+    [SerializeField] private float _onImpactAudioVolume = .3f;
+    [SerializeField] private float _onImpactAudioExplosionVolume = .3f;
+    [SerializeField] private AudioClip _onFireAudio;
+    [SerializeField] private AudioClip _onImpactAudio;
+    [SerializeField] private AudioClip _onImpactExplosionAudio;
 
     private uint _damage = 1;
     private float _speed;
@@ -55,12 +61,17 @@ public class Bullet : MonoBehaviour, IHit, IPoolingItem
         {
             target.HandleDamage(this);
         }
+
+        if (_onImpactAudio != null) AudioManager.I.CreateOneShot(_onImpactAudio, transform.position, _onImpactAudioVolume);
+        if (_onImpactExplosionAudio != null) AudioManager.I.CreateOneShot(_onImpactExplosionAudio, transform.position.normalized, _onImpactAudioExplosionVolume);
+
         gameObject.SetActive(false);
     }
     
     void IPoolingItem.Reset()
     {
         UpdateSpeed(_speed);
+        if (_onFireAudio != null) AudioManager.I.CreateOneShot(_onFireAudio, transform.position, _onFireAudioVolume);
     }
 
     uint IHit.GetDamageAmount()

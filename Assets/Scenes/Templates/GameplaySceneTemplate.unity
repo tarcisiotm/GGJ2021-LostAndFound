@@ -347,6 +347,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 98025187}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &105030955
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 105030956}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &105030956
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105030955}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1223691641}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &105292290
 GameObject:
   m_ObjectHideFlags: 0
@@ -2952,6 +2982,7 @@ Transform:
   m_Children:
   - {fileID: 1728153079}
   - {fileID: 110422623}
+  - {fileID: 105030956}
   m_Father: {fileID: 837267842}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2982,6 +3013,12 @@ MonoBehaviour:
       type: 3}
     AmountToPool: 5
     ParentTransform: {fileID: 110422623}
+    Objects: []
+  - Name: Audio
+    Prefab: {fileID: 6882589028417307377, guid: 2eaeecf9e46d04492915584104b1e7eb,
+      type: 3}
+    AmountToPool: 5
+    ParentTransform: {fileID: 105030956}
     Objects: []
 --- !u!1 &1247131417
 GameObject:
