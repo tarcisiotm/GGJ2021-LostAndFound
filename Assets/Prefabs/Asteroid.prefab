@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8fb6229338d4cdfa163a7024cb2002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onDeathPrefab: {fileID: 0}
-  _pickup: {fileID: 0}
+  _onDeathPrefab: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
+    type: 3}
+  _pickupPrefab: {fileID: 0}
   _minMaxSpawnProbability: 1
 --- !u!114 &5239654133780391529
 MonoBehaviour:
@@ -156,5 +157,6 @@ MonoBehaviour:
   _targetTime: 0.4
   Color1: {r: 1, g: 1, b: 1, a: 1}
   Color2: {r: 1, g: 0, b: 0, a: 1}
+  _onEnable: 0
   Speed: 1
   Offset: 0

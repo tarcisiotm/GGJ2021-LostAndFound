@@ -34,6 +34,9 @@ public class DestructibleController : MonoBehaviour
     {
         if (_onDeathPrefab != null)
         {
+            var obj = Instantiate(_onDeathPrefab);
+            obj.transform.position = transform.position;
+            obj.transform.rotation = transform.rotation;
         }
 
         if (_pickupPrefab != null && Random.Range(0, 1) <= _minMaxSpawnProbability)
