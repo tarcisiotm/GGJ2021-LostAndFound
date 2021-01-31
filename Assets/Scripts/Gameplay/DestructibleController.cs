@@ -18,6 +18,7 @@ public class DestructibleController : MonoBehaviour
     {
         _health = GetComponentInChildren<Health>();
         _health.OnDeath += HandleDeath;
+        _health.OnPointDown += HandleDamageTaken;
     }
 
     void Start()
@@ -28,7 +29,7 @@ public class DestructibleController : MonoBehaviour
     {
     }
 
-    private void HandleDeath()
+    private void HandleDeath(uint damageAmount)
     {
         if (_onDeathPrefab != null)
         {
@@ -39,5 +40,12 @@ public class DestructibleController : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+    }
+
+    private void HandleDamageTaken(uint damageAmount)
+    {
+        if (_health.IsDead) return;
+
+        GetComponent<ChangeColorController>().TakeDamage();
     }
 }
