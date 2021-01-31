@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TG.Core;
 using UnityEngine;
 
 [RequireComponent(typeof(Health))]
@@ -8,7 +9,7 @@ public class DestructibleController : MonoBehaviour
     [Header("Optional")]
     [SerializeField] private GameObject _onDeathPrefab;
 
-    [SerializeField] private Collectible _pickup;
+    [SerializeField] private GameObject _pickupPrefab;
     [Tooltip("These will be clamped between 0 and 1 (100%)")]
     [SerializeField] [Range(0,1)] private float _minMaxSpawnProbability = 1f;
 
@@ -38,8 +39,13 @@ public class DestructibleController : MonoBehaviour
             obj.transform.rotation = transform.rotation;
         }
 
-        if (_pickup != null && Random.Range(0, 1) <= _minMaxSpawnProbability)
+        if (_pickupPrefab != null && Random.Range(0, 1) <= _minMaxSpawnProbability)
         {
+            var obj = PoolingManager.I.GetPooledObject(_pickupPrefab);
+            if (obj == null) obj = Instantiate(_pickupPrefab);
+
+            obj.transform.position = transform.position;
+            obj.SetActive(true);
         }
 
         gameObject.SetActive(false);
