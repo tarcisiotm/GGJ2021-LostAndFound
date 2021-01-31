@@ -34,7 +34,6 @@ public class ChangeColorController : MonoBehaviour
         }
     }
 
-
     public void TakeDamage()
     {
         _isTakingDamage = true;
