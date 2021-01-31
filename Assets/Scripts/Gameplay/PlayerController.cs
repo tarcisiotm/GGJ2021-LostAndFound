@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     [Header("Audio")]
     [SerializeField] private AudioClip _engineSound;
-    [SerializeField] private float _engineSoundMinVolume = .1f;
+    [SerializeField] private float _engineSoundMinVolume = 0;
     [SerializeField] private float _engineSoundMaxVolume = .3f;
 
     public bool _isMoving = false;
