@@ -22,8 +22,10 @@ public class PlayerController : MonoBehaviour, IGetHit
     [SerializeField] private float _engineSoundMinVolume = .1f;
     [SerializeField] private float _engineSoundMaxVolume = .3f;
 
+    public bool _isMoving = false;
+
     private float _currentSpeed;
-    private float _engineSoundCurrentVolume;
+
     private AudioSource _audioSource;
 
     private Vector3 _inputDirection;
@@ -71,6 +73,8 @@ public class PlayerController : MonoBehaviour, IGetHit
         _inputDirection = Vector3.ClampMagnitude(_inputDirection, 1f); // prevent diagonals from being faster
         _audioSource.DOKill(false);
         _audioSource.DOFade(_engineSoundMaxVolume, .3f);
+
+        _isMoving = true;
     }
 
     private void OnCancelled(InputAction.CallbackContext obj)
@@ -78,6 +82,8 @@ public class PlayerController : MonoBehaviour, IGetHit
         _currentSpeed = 0; // TODO Ease out speed
         _audioSource.DOKill(false);
         _audioSource.DOFade(_engineSoundMinVolume, .3f);
+
+        _isMoving = false;
     }
 
     private void Shoot(InputAction.CallbackContext ctx)
@@ -96,8 +102,6 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     private void Update()
     {
-        HandleRotation();
-
 #if UNITY_EDITOR
         if (Keyboard.current.spaceKey.wasPressedThisFrame) _health.LoseHealth(1);
         if (_health.IsDead) gameObject.SetActive(false);
@@ -106,6 +110,7 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     private void FixedUpdate()
     {
+        HandleRotation();
         HandleMovement();
     }
 
@@ -125,8 +130,10 @@ public class PlayerController : MonoBehaviour, IGetHit
         mousePos.x = mousePos.x - objectPos.x;
         mousePos.y = mousePos.y - objectPos.y;
         */
+        if (!_isMoving) return;
 
         float angle = Mathf.Atan2(_inputDirection.y, _inputDirection.x) * Mathf.Rad2Deg;
+
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), _angleSpeed * Time.deltaTime);
     }
 
