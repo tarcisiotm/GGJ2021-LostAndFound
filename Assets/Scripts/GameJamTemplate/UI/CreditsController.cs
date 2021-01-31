@@ -115,7 +115,7 @@ public class CreditsController : MonoBehaviour
     {
         if (!_hasInit) return;
 
-        if (_controls.UI.Submit.triggered && _creditsState != CreditsState.FadingOut)
+        if ((_controls.UI.Submit.triggered || _controls.UI.Click.triggered) && _creditsState != CreditsState.FadingOut)
         {
             if (_keysPressed < 1)
             {
