@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8254396890784074245}
   - component: {fileID: 4038873642389097580}
   - component: {fileID: 6181370065106013644}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -50,11 +50,9 @@ MonoBehaviour:
   _onImpactPrefab: {fileID: 6851637064773068404, guid: 81e16e4dcb77b4c41ba2b012ccc6488e,
     type: 3}
   _onFireAudioVolume: 0.05
-  _onImpactAudioVolume: 0.2
-  _onImpactAudioExplosionVolume: 0.2
-  _onFireAudio: {fileID: 8300000, guid: 72e0508e1a6f74c5298224f4c497cca2, type: 3}
+  _onImpactAudioVolume: 0.1
+  _onFireAudio: {fileID: 8300000, guid: 3957a6fd24502eb46bbae08f160aa25f, type: 3}
   _onImpactAudio: {fileID: 8300000, guid: 7817faa79149b45df9ee79f99012b43c, type: 3}
-  _onImpactExplosionAudio: {fileID: 0}
 --- !u!33 &736208115044141128
 MeshFilter:
   m_ObjectHideFlags: 0
