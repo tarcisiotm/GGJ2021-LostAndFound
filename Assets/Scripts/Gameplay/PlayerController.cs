@@ -5,7 +5,7 @@ using TG.Core;
 using UnityEngine.InputSystem;
 using System;
 
-public class PlayerController : MonoBehaviour, IHit, IGetHit
+public class PlayerController : MonoBehaviour, IGetHit
 {
     [Header("Settings")]
     [SerializeField] float _speed = 1;
@@ -19,13 +19,15 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
     private float _currentSpeed;
 
     private Vector3 _inputDirection;
-    private Vector3 _lastValidInputDirection;
 
     private Rigidbody _rigidBody;
 
     private PlayerControls _controls;
 
     private Health _health;
+
+    [Header("Debug")]
+    [SerializeField] private bool _canShoot = false;
     
     private void Awake()
     {
@@ -65,6 +67,8 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
 
     private void Shoot(InputAction.CallbackContext ctx)
     {
+        if (!_canShoot) return; // we could only subscribe to the shoot method when this is enabled but this is probably simpler
+
         var bullet = PoolingManager.I.GetPooledObject<Bullet>(_bulletPrefab);
         bullet.transform.position = _muzzle.position;
         bullet.transform.rotation = _muzzle.rotation;
@@ -81,16 +85,10 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
         HandleMovement();
         HandleRotation();
 
-        //testing health
-        if (Keyboard.current.spaceKey.wasPressedThisFrame)
-        {
-            _health.LoseHealth(1);
-        }
-        //testing death
-        if (_health.IsDead())
-        {
-            gameObject.SetActive(false);
-        }
+#if UNITY_EDITOR
+        if (Keyboard.current.spaceKey.wasPressedThisFrame) _health.LoseHealth(1);
+        if (_health.IsDead) gameObject.SetActive(false);
+#endif
     }
 
     private void HandleInput()
@@ -119,17 +117,15 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), _angleSpeed * Time.deltaTime);
     }
 
-    
     #region Interface Implementation
     void IGetHit.HandleDamage(IHit hitObject)
     {
         _health.LoseHealth(hitObject.GetDamageAmount());
     }
-
-    uint IHit.GetDamageAmount()
-    {
-        // return current damage amount
-        return 0;
-    }
     #endregion Interface Implementation
+
+    public void SetCanShoot(bool canShoot)
+    {
+        _canShoot = canShoot;
+    }
 }

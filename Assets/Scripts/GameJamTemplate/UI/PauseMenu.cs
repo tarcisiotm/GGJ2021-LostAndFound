@@ -1,7 +1,6 @@
 ﻿using TG.Core;
 using UnityEngine;
 
-
 /// <summary>
 /// A Pause menu handler
 /// </summary>
