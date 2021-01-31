@@ -82,13 +82,17 @@ public class PlayerController : MonoBehaviour, IGetHit
     private void Update()
     {
         HandleInput();
-        HandleMovement();
-        HandleRotation();
-
+       
 #if UNITY_EDITOR
         if (Keyboard.current.spaceKey.wasPressedThisFrame) _health.LoseHealth(1);
         if (_health.IsDead) gameObject.SetActive(false);
 #endif
+    }
+
+    private void FixedUpdate()
+    {
+        HandleMovement();
+        HandleRotation();
     }
 
     private void HandleInput()
