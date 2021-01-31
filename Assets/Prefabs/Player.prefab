@@ -494,7 +494,7 @@ MonoBehaviour:
   _bulletPrefab: {fileID: 5411709538847830972, guid: d696c1d829ddf2542ab00f2ac23333c5,
     type: 3}
   _muzzle: {fileID: 651043116394459187}
-  _bulletSpeed: 2
+  _bulletSpeed: 10
 --- !u!54 &651043116541407001
 Rigidbody:
   m_ObjectHideFlags: 0

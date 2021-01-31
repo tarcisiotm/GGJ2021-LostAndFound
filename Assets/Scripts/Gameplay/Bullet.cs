@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour, IHit, IPoolingItem
 {
-    private int _damage;
+    private uint _damage = 1;
     private float _speed;
     private Vector3 _direction;
     private Rigidbody _rigidBody;
@@ -49,8 +49,8 @@ public class Bullet : MonoBehaviour, IHit, IPoolingItem
         UpdateSpeed(_speed);
     }
 
-    int IHit.GetDamageAmmount()
+    uint IHit.GetDamageAmount()
     {
-        return 0;
+        return _damage;
     }
 }
