@@ -24,12 +24,16 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
     private Rigidbody _rigidBody;
 
     private PlayerControls _controls;
+
+    private Health _health;
     
     private void Awake()
     {
         _rigidBody = GetComponentInChildren<Rigidbody>();
         
         _controls = new PlayerControls();
+
+        _health = GetComponentInChildren<Health>();
     }
 
     private void OnEnable()
@@ -76,6 +80,17 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
         HandleInput();
         HandleMovement();
         HandleRotation();
+
+        //testing health
+        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            _health.LoseHealth(1);
+        }
+        //testing death
+        if (_health.IsDead())
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void HandleInput()
@@ -104,15 +119,16 @@ public class PlayerController : MonoBehaviour, IHit, IGetHit
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), _angleSpeed * Time.deltaTime);
     }
 
+    
     #region Interface Implementation
     void IGetHit.HandleDamage(IHit hitObject)
     {
-        // healthPoints - hitObject.GetDamageAmmount();
+        _health.LoseHealth(hitObject.GetDamageAmount());
     }
 
-    int IHit.GetDamageAmmount()
+    uint IHit.GetDamageAmount()
     {
-        // return current damage ammount
+        // return current damage amount
         return 0;
     }
     #endregion Interface Implementation

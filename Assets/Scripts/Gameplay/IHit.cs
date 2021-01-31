@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IHit
 {
-    int GetDamageAmmount();
+    uint GetDamageAmount();
 }
