@@ -4,6 +4,7 @@ using UnityEngine;
 using TG.Core;
 using UnityEngine.InputSystem;
 using System;
+using DG.Tweening;
 
 public class PlayerController : MonoBehaviour, IGetHit
 {
@@ -16,7 +17,14 @@ public class PlayerController : MonoBehaviour, IGetHit
     [SerializeField] private Transform _muzzle;
     [SerializeField] private float _bulletSpeed;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip _engineSound;
+    [SerializeField] private float _engineSoundMinVolume = .1f;
+    [SerializeField] private float _engineSoundMaxVolume = .3f;
+
     private float _currentSpeed;
+    private float _engineSoundCurrentVolume;
+    private AudioSource _audioSource;
 
     private Vector3 _inputDirection;
 
@@ -36,6 +44,8 @@ public class PlayerController : MonoBehaviour, IGetHit
         _controls = new PlayerControls();
 
         _health = GetComponentInChildren<Health>();
+
+        _audioSource = GetComponentInChildren<AudioSource>();
     }
 
     private void OnEnable()
@@ -58,11 +68,16 @@ public class PlayerController : MonoBehaviour, IGetHit
     {
         _currentSpeed = _speed; // TODO Ease in speed?
         _inputDirection = obj.ReadValue<Vector2>();
+        _inputDirection = Vector3.ClampMagnitude(_inputDirection, 1f); // prevent diagonals from being faster
+        _audioSource.DOKill(false);
+        _audioSource.DOFade(_engineSoundMaxVolume, .3f);
     }
 
     private void OnCancelled(InputAction.CallbackContext obj)
     {
         _currentSpeed = 0; // TODO Ease out speed
+        _audioSource.DOKill(false);
+        _audioSource.DOFade(_engineSoundMinVolume, .3f);
     }
 
     private void Shoot(InputAction.CallbackContext ctx)
@@ -81,8 +96,8 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     private void Update()
     {
-        HandleInput();
-       
+        HandleRotation();
+
 #if UNITY_EDITOR
         if (Keyboard.current.spaceKey.wasPressedThisFrame) _health.LoseHealth(1);
         if (_health.IsDead) gameObject.SetActive(false);
@@ -92,12 +107,6 @@ public class PlayerController : MonoBehaviour, IGetHit
     private void FixedUpdate()
     {
         HandleMovement();
-        HandleRotation();
-    }
-
-    private void HandleInput()
-    {
-         _inputDirection = Vector3.ClampMagnitude(_inputDirection, 1f); // prevent diagonals from being faster
     }
 
     private void HandleMovement()

@@ -7,8 +7,9 @@ public class Health : MonoBehaviour, IGetHit
     [SerializeField] uint _maxHealthPoints;
     [SerializeField] uint _currentHealth;
 
-    public delegate void OnDeathCallback();
-    public event OnDeathCallback OnDeath;
+    public delegate void OnPointDownCallback(uint damageAmount);
+    public event OnPointDownCallback OnDeath;
+    public event OnPointDownCallback OnPointDown;
 
     private bool _isDead;
 
@@ -53,8 +54,10 @@ public class Health : MonoBehaviour, IGetHit
         {
             _isDead = true;
             _currentHealth = 0;
-            OnDeath?.Invoke();
+            OnDeath?.Invoke(_currentHealth);
         }
+
+        OnPointDown?.Invoke(_currentHealth);
     }
 
     #region Interface Implementation
