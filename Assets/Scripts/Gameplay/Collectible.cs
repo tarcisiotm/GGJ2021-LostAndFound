@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Collectible : MonoBehaviour
 {
-    // WIP
     public enum CollectibleType
     {
         Fuel,
@@ -19,31 +18,38 @@ public class Collectible : MonoBehaviour
     
     uint _healthAmount = 1;
     
-    // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    // TODO
     private void OnTriggerEnter(Collider other)
     {
-        
         var player = other.GetComponentInParent<PlayerController>();
         if (player == null) return;
-         
-        if (_collectibleType == CollectibleType.Health)
+
+        HandleCollectible(player);
+    }
+
+    private void HandleCollectible(PlayerController player)
+    {
+        switch (_collectibleType)
         {
-           Health health = player.GetComponentInChildren<Health>();
-           health.AddHealth(_healthAmount);   
+            case CollectibleType.Health: HandleHealth(player); break;
+            case CollectibleType.Weapon: HandleWeapon(player); break;
         }
-            
-        // if collided with player, grant item
+        //play collect sound
+        Destroy(gameObject);
+    }
+
+    private void HandleHealth(PlayerController player)
+    {
+        Health health = player.GetComponentInChildren<Health>();
+        health.AddHealth(_healthAmount);
+    }
+
+    private void HandleWeapon(PlayerController player)
+    {
+        player.SetCanShoot(true);
     }
 }
