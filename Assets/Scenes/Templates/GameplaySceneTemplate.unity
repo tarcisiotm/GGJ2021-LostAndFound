@@ -5256,6 +5256,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Asteroid
       objectReference: {fileID: 0}
+    - target: {fileID: 5239654133780391530, guid: e08879f7c043d4fab95129cbc258dfc6,
+        type: 3}
+      propertyPath: _pickupPrefab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5709514092681932275, guid: e08879f7c043d4fab95129cbc258dfc6,
         type: 3}
       propertyPath: m_RootOrder
