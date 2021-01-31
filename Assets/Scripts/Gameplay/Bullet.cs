@@ -52,9 +52,10 @@ public class Bullet : MonoBehaviour, IHit, IPoolingItem
 
         if (_onImpactPrefab != null)
         {
-            var obj = Instantiate(_onImpactPrefab);
+            var obj = PoolingManager.I.GetPooledObject(_onImpactPrefab); //Instantiate(_onImpactPrefab);
             obj.transform.position = collision.contacts[0].point;
             obj.transform.rotation = Quaternion.LookRotation(collision.contacts[0].normal);
+            obj.SetActive(true);
         }
 
         if (target != null)
