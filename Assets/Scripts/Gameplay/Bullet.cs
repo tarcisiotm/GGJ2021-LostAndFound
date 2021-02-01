@@ -69,7 +69,7 @@ public class Bullet : MonoBehaviour, IHit, IPoolingItem
     void IPoolingItem.Reset()
     {
         UpdateSpeed(_speed);
-        if (_onFireAudio != null) AudioManager.I.CreateOneShot(_onFireAudio, transform.position, _onFireAudioVolume);
+        if (_onFireAudio != null) AudioManager.I.CreateOneShot(_onFireAudio, transform.position + UnityEngine.Random.insideUnitSphere * .05f, _onFireAudioVolume);
     }
 
     uint IHit.GetDamageAmount()

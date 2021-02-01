@@ -5,6 +5,7 @@ using UnityEngine;
 public class Attractor : MonoBehaviour
 {
     [SerializeField] float _maxDistance = 0.5f;
+    [SerializeField] float _minAttractDistance = -1;
 
     Vector3 _pos;
     PlayerController _player;
@@ -18,6 +19,8 @@ public class Attractor : MonoBehaviour
     void Update()
     {
         if (_player == null) return;
+
+        if (_minAttractDistance > 0 && Vector3.Distance(transform.position, _player.transform.position) > _minAttractDistance) return;
 
         transform.position = Vector3.MoveTowards(transform.position, _player.transform.position, _maxDistance * Time.deltaTime);
     }
