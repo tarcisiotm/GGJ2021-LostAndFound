@@ -61,6 +61,6 @@ public class DestructibleController : MonoBehaviour
     {
         if (_health.IsDead) return;
 
-        GetComponent<ChangeColorController>().TakeDamage();
+        if (GetComponent<ChangeColorController>() != null) GetComponent<ChangeColorController>().TakeDamage();
     }
 }

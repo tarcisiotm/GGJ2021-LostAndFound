@@ -7,7 +7,9 @@ public class ChangeColorController : MonoBehaviour
 
     [SerializeField] private Color Color1 = Color.white;
     [SerializeField] private Color Color2 = Color.red;
+
     [SerializeField] private bool _onEnable = false;
+    [SerializeField] private bool _destroyOnEnable = false;
 
     public float Speed = 1, Offset;
 
@@ -28,9 +30,9 @@ public class ChangeColorController : MonoBehaviour
         if (_onEnable)
         {
             _renderer.GetPropertyBlock(_propBlock);
-            _propBlock.SetColor("_Color", Color2);
+            _propBlock.SetColor("_Color", Color1);
             _renderer.SetPropertyBlock(_propBlock);
-            Destroy(this);
+            if (_destroyOnEnable) Destroy(this);
         }
     }
 
