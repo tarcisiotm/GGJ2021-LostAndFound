@@ -27,6 +27,12 @@ public class SonarObjectController : MonoBehaviour
 
     void Update()
     {
+        if (_target == null || !_target.gameObject.activeSelf)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         dir = _target.position - _player.position;
         _distance = Vector3.Distance(_target.position, _player.position);
 

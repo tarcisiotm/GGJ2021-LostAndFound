@@ -21,6 +21,9 @@ public class PlayerController : MonoBehaviour, IGetHit
     [SerializeField] private AudioClip _engineSound;
     [SerializeField] private float _engineSoundMinVolume = 0;
     [SerializeField] private float _engineSoundMaxVolume = .3f;
+    [Space]
+    [SerializeField] private CanvasGroup _endCanvas;
+
 
     public bool _isMoving = false;
 
@@ -38,7 +41,8 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     [Header("Debug")]
     [SerializeField] private bool _canShoot = false;
-    
+    [SerializeField] private int _mineral = 0;
+
     private void Awake()
     {
         _rigidBody = GetComponentInChildren<Rigidbody>();
@@ -138,6 +142,17 @@ public class PlayerController : MonoBehaviour, IGetHit
         float angle = Mathf.Atan2(_inputDirection.y, _inputDirection.x) * Mathf.Rad2Deg;
 
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(new Vector3(0, 0, angle)), _angleSpeed * Time.deltaTime);
+    }
+
+    public void HandleMineral()
+    {
+        _mineral++;
+
+        if(_mineral >= 3)
+        {
+            _endCanvas.gameObject.SetActive(true);
+            _endCanvas.DOFade(1, 3);
+        }
     }
 
     #region Interface Implementation

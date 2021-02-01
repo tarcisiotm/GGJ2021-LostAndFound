@@ -40,6 +40,7 @@ public class Collectible : MonoBehaviour
         {
             case CollectibleType.Health: HandleHealth(player); break;
             case CollectibleType.Weapon: HandleWeapon(player); break;
+            case CollectibleType.Mineral: player.HandleMineral(); break;
         }
 
         OnCollected?.Invoke();
