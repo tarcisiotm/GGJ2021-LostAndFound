@@ -127,7 +127,7 @@ MonoBehaviour:
   _onDeathPrefab: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
     type: 3}
   _onExplosionAudio: {fileID: 8300000, guid: a3f97e3d9623fa84ab404144e02a4108, type: 3}
-  _onExplosionAudioVolume: 0.3
+  _onExplosionAudioVolume: 0.4
   _pickupPrefab: {fileID: 0}
   _minMaxSpawnProbability: 1
 --- !u!114 &5239654133780391529
@@ -160,5 +160,6 @@ MonoBehaviour:
   Color1: {r: 1, g: 1, b: 1, a: 1}
   Color2: {r: 1, g: 0, b: 0, a: 1}
   _onEnable: 0
+  _destroyOnEnable: 0
   Speed: 1
   Offset: 0

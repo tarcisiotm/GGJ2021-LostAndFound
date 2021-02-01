@@ -50,8 +50,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onImpactPrefab: {fileID: 6851637064773068404, guid: 81e16e4dcb77b4c41ba2b012ccc6488e,
     type: 3}
-  _onFireAudioVolume: 0.05
-  _onImpactAudioVolume: 0.1
+  _onFireAudioVolume: 0.1
+  _onImpactAudioVolume: 0.2
   _onFireAudio: {fileID: 8300000, guid: 3957a6fd24502eb46bbae08f160aa25f, type: 3}
   _onImpactAudio: {fileID: 8300000, guid: 7817faa79149b45df9ee79f99012b43c, type: 3}
 --- !u!33 &736208115044141128

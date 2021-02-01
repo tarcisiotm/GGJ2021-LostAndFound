@@ -6763,7 +6763,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgmClip: {fileID: 8300000, guid: b3b7ec3a341d7482988134a312d5b3b7, type: 3}
-  volume: 0.25
+  volume: 0.8
   autoDestroy: 1
 --- !u!4 &405221245
 Transform:
@@ -6800,7 +6800,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -7778,7 +7778,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -8071,7 +8071,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -8995,7 +8995,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -9075,7 +9075,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -9187,12 +9187,12 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -9416,7 +9416,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -10173,7 +10173,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -10253,7 +10253,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -15346,7 +15346,7 @@ PrefabInstance:
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -15736,7 +15736,7 @@ PrefabInstance:
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -16714,11 +16714,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
         type: 3}
-    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
-        type: 3}
-      propertyPath: _onExplosionAudioVolume
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
@@ -17374,11 +17369,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
         type: 3}
-    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
-        type: 3}
-      propertyPath: _onExplosionAudioVolume
-      value: 0.3
-      objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
@@ -18354,7 +18344,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -19432,7 +19422,7 @@ PrefabInstance:
     - target: {fileID: 651043116541407006, guid: 2879926e2026e4d15ab7a69d4a173b89,
         type: 3}
       propertyPath: _engineSoundMaxVolume
-      value: 0.05
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 651043116541407006, guid: 2879926e2026e4d15ab7a69d4a173b89,
         type: 3}
@@ -19538,7 +19528,7 @@ PrefabInstance:
     - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: _onExplosionAudioVolume
-      value: 0.3
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}

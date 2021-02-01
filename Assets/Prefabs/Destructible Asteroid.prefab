@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _onDeathPrefab: {fileID: 0}
   _onExplosionAudio: {fileID: 8300000, guid: 9c48acc6ae6427041890a91a4d4c24a2, type: 3}
-  _onExplosionAudioVolume: 0.1
+  _onExplosionAudioVolume: 0.4
   _pickupPrefab: {fileID: 0}
   _minMaxSpawnProbability: 1
 --- !u!114 &814425567053616950
@@ -144,5 +144,6 @@ MonoBehaviour:
   Color1: {r: 1, g: 1, b: 1, a: 1}
   Color2: {r: 1, g: 0, b: 0, a: 1}
   _onEnable: 0
+  _destroyOnEnable: 0
   Speed: 1
   Offset: 0
