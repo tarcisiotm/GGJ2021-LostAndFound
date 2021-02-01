@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!135 &6704486558175907244
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5893653703754903806}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.02
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6704486558175907242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5893653703754903806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83e1835b82fd94365b5fe1fb61fb718d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collectibleType: 4
+  OnCollected:
+    m_PersistentCalls:
+      m_Calls: []
+  _onCollectibleAudio: {fileID: 8300000, guid: 491f9100539aa4e79908ae6bf2fc2d71, type: 3}
+  _onCollectibleAudioVolume: 0.3
+--- !u!114 &6704486558175907243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5893653703754903806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe168b3ea14554678917f37a2cbaee55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minMaxSpeed: {x: 1, y: 10}
+  _startWithRandomRotation: 1
+  _randomDir: {x: 0, y: 0, z: 0}
 --- !u!1 &6704486557861788356
 GameObject:
   m_ObjectHideFlags: 0
@@ -31,47 +77,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &6704486558175907244
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5893653703754903806}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.02
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6704486558175907243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5893653703754903806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe168b3ea14554678917f37a2cbaee55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minMaxSpeed: {x: 1, y: 10}
-  _startWithRandomRotation: 1
-  _randomDir: {x: 0, y: 0, z: 0}
---- !u!114 &6704486558175907242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5893653703754903806}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e1835b82fd94365b5fe1fb61fb718d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _collectibleType: 4
 --- !u!1001 &6704486558175907247
 PrefabInstance:
   m_ObjectHideFlags: 0

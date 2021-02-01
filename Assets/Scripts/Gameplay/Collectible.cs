@@ -18,7 +18,11 @@ public class Collectible : MonoBehaviour
     public CollectibleType _collectibleType;
 
     public UnityEvent OnCollected;
-    
+
+    [Header("SFX")]
+    [SerializeField] private AudioClip _onCollectibleAudio;
+    [SerializeField] private float _onCollectibleAudioVolume;
+
     uint _healthAmount = 1;
     
     void Start()
@@ -46,6 +50,7 @@ public class Collectible : MonoBehaviour
         OnCollected?.Invoke();
 
         //play collect sound
+        if (_onCollectibleAudio != null) AudioManager.I.CreateOneShot(_onCollectibleAudio, transform.position, _onCollectibleAudioVolume);
         Destroy(gameObject);
     }
 
