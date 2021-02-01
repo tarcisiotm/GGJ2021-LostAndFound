@@ -83,6 +83,9 @@ public class PlayerController : MonoBehaviour, IGetHit
         _audioSource.DOKill(false);
         _audioSource.DOFade(_engineSoundMinVolume, .3f);
 
+        _rigidBody.angularVelocity = Vector3.zero;
+        _rigidBody.velocity = Vector3.zero;
+
         _isMoving = false;
     }
 

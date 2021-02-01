@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Collectible : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class Collectible : MonoBehaviour
     }
 
     public CollectibleType _collectibleType;
+
+    public UnityEvent OnCollected;
     
     uint _healthAmount = 1;
     
@@ -38,6 +41,9 @@ public class Collectible : MonoBehaviour
             case CollectibleType.Health: HandleHealth(player); break;
             case CollectibleType.Weapon: HandleWeapon(player); break;
         }
+
+        OnCollected?.Invoke();
+
         //play collect sound
         Destroy(gameObject);
     }
