@@ -109,10 +109,6 @@ public class PlayerController : MonoBehaviour, IGetHit
 
     private void Update()
     {
-#if UNITY_EDITOR
-        if (Keyboard.current.spaceKey.wasPressedThisFrame) _health.LoseHealth(1);
-        if (_health.IsDead) gameObject.SetActive(false);
-#endif
     }
 
     private void FixedUpdate()

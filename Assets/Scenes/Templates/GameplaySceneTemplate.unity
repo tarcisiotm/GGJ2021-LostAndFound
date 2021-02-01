@@ -535,6 +535,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3504298393111167382, guid: ef7a9d01e6ffc493c8a9f703c35a2e59,
         type: 3}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onDeathPrefab
+      value: 
+      objectReference: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
+        type: 3}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onExplosionAudioVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 814425567053616950, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _maxHealthPoints
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
@@ -543,12 +559,12 @@ PrefabInstance:
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 309.6
+      value: 365.8
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 32.9
+      value: 8.6
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -9196,7 +9212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.38, y: -127.990005, z: -15}
+  m_LocalPosition: {x: -31.38, y: -127.990005, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -14875,6 +14891,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3504298393111167382, guid: ef7a9d01e6ffc493c8a9f703c35a2e59,
         type: 3}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onDeathPrefab
+      value: 
+      objectReference: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
+        type: 3}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onExplosionAudioVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 814425567053616950, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _maxHealthPoints
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
@@ -14883,12 +14915,12 @@ PrefabInstance:
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 309.6
+      value: 225.4
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -40.4
+      value: 55.3
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -15060,6 +15092,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3504298393111167382, guid: ef7a9d01e6ffc493c8a9f703c35a2e59,
         type: 3}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onDeathPrefab
+      value: 
+      objectReference: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
+        type: 3}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onExplosionAudioVolume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 814425567053616950, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _maxHealthPoints
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_RootOrder
@@ -15068,12 +15116,12 @@ PrefabInstance:
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 309.6
+      value: 57.6
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 119.6
+      value: 103.7
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
@@ -17149,7 +17197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1787901083}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -31.38, y: -127.990005, z: -15}
+  m_LocalPosition: {x: -31.38, y: -127.990005, z: -20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2127924957}
@@ -18505,16 +18553,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 1, y: 0, z: 0}
-  m_LookaheadTime: 0.2
-  m_LookaheadSmoothing: 10
+  m_LookaheadTime: 0.5
+  m_LookaheadSmoothing: 15
   m_LookaheadIgnoreY: 0
-  m_XDamping: 2
-  m_YDamping: 2
+  m_XDamping: 1
+  m_YDamping: 1
   m_ZDamping: 0
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
   m_ScreenY: 0.5
-  m_CameraDistance: 15
+  m_CameraDistance: 20
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -18648,7 +18696,7 @@ PrefabInstance:
     - target: {fileID: 651043116541407006, guid: 2879926e2026e4d15ab7a69d4a173b89,
         type: 3}
       propertyPath: _speed
-      value: 24
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 651043116541407006, guid: 2879926e2026e4d15ab7a69d4a173b89,
         type: 3}
@@ -18754,6 +18802,17 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Destructible Asteroid
+      objectReference: {fileID: 0}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onDeathPrefab
+      value: 
+      objectReference: {fileID: 6851637064773068404, guid: 58ea02ff32254ff449b72534dd2c5b7a,
+        type: 3}
+    - target: {fileID: 814425567053616945, guid: e88797d4e221d4838a66c5ff0b813f78,
+        type: 3}
+      propertyPath: _onExplosionAudioVolume
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 920936378152310535, guid: e88797d4e221d4838a66c5ff0b813f78,
         type: 3}
